@@ -7,7 +7,8 @@ const Home = () => {
     {
         id:"1",
         titulo:"Papa lavada",
-        descripcion:"Precio x kg: $160"
+        descripcion:"Precio x kg: $160",
+        img:"../assets/img/Calabaza..jpg"
     },
     {
         id:"2",
