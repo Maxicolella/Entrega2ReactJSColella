@@ -5,11 +5,15 @@ import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './routes/firebase.config';
 import Formulario from './components/Formulario';
+import Cart from './components/Cart';
 
 function App() {
 
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState (false);
+  const [carrito, setCarrito] = useState ([]);
+
+  const addCarrito = (producto) => setCarrito ([...carrito, producto])
 
   useEffect (() => {
 
@@ -38,10 +42,16 @@ function App() {
     <div style={{display:'flex', alingitems:'center'}}> 
     
       {loading && <h1>Cargando</h1>}
-      {!loading && productos.length > 0 && productos.map((producto) => <li key={producto.id}>{producto.nombre}</li>)}
-    
-    </div>
+
+      <div>
+        {!loading && productos.length > 0 && productos.map((producto) => (
+          <Cart key={producto.id} item={producto} addCarrito={addCarrito} />
+        ))}
+      </div>
+
+      </div>
     <hr />
+      <h1>Carrito tengo {carrito.length}</h1>
     <Formulario/>
       <Footer/>
     </div>

@@ -39,16 +39,12 @@ const Home = () => {
 
   return (
 
-    <Fragment>
-    
-    <h1>Inicio.</h1>
-    <div style={{display:'flex', flexDirection:'column', justifyItems:'center', justifycontent:'space-around'}}>
-     
-      <div className='d-flex my-3'>
+    <Fragment>     
+      <div className='d-flex my-3'
+        style={{display:'flex', flexDirection:'row', alignItems:'center', justifyItems:'center', justifycontent:'space-around'}}>
         {items.map((item) => (
           <Item key={item.id} {...item}/>
         ))}
-      </div>
     </div>
 
     </Fragment>

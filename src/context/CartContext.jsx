@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { unificarItems, verificaSiExisteEnCarrito } from "../helpers";
-import { GlobalProvider } from "GlobalContext";
+import { GlobalProvider } from "./GlobalContext";
 
 const CartContext = createContext();
 

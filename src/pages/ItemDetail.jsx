@@ -74,6 +74,7 @@ const ItemDetail = () => {
 
           <h1>La cantidad actual es: {Contador}</h1>
           <button onClick={agregarAlCarrito} >Agregar al carrito</button>
+          
         </div>
       )}
     </Fragment>
